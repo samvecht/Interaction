@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>COLORS</title>
+    <script src="./gameengine.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+
+    <canvas id="gameWorld" tabindex="1" width="400" height="400" style="border: 1px solid brown; background: white"></canvas>
+	<p id="generation" >Generation 0</p>
+	<button onclick="pause()">Pause/Unpause</button>
+	<br />
+	<p>This is a 2D cyclic cellular automaton simulator.  Each cell has a color and if it is next to a cell with
+	the color sequential to it, it will become that color in the next generation.  Depending on the size it can take up to ~400 generations before stability occurs.</p>
+	<h2>  Functionality is not guaranteed beyond recommended intervals.</h1>
+	<text>Size(20-400)</text> <input type="text" id="size" value="200" />
+	<br />
+	<text>NumColors(2-15)</text> <input type="text" id="colors" value="15" />
+	<br />
+	<text>Interval between generations(100+)</text> <input type="text" id="interval" value="100" />
+	<br />
+	<text>Directions to check neighbors of</text>
+	<br />
+	<input type="checkbox" id="topleft">Top Left</input>
+	<input type="checkbox" id="above" checked>Top</input>
+	<input type="checkbox" id="topright">Top Right</input>
+	<br />
+	<input type="checkbox" id="left" checked>Left</input>
+	<input type="checkbox" id="right" checked>Right</input>
+	<br />
+	<input type="checkbox" id="bottomleft">Bottom Left</input>
+	<input type="checkbox" id="bottom" checked>Bottom</input>
+	<input type="checkbox" id="bottomright">Bottom Right</input>
+	<br />
+	<text>Min number of adjacent neighbors in the right color required to change a cell</text> <input type="text" id="minNeighbors" value="1" />
+	<br />
+	<button onclick="start()">Start Simulation</button>
+	<br />
+	<p>Some preset options</p>
+	<button onclick="preset1()">Big and Slow</button>
+	<button onclick="preset2()">Trippy</button>
+	<p>Inspired by this wikipedia page https://en.wikipedia.org/wiki/Cyclic_cellular_automaton especially the last two images on the right side of the screen.</p>
+</body>
+</html>
